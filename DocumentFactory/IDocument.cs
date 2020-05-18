@@ -9,7 +9,7 @@ namespace DocumentFactory
     /// <summary>
     /// An interface dictating the behavior of Document classes.
     /// </summary>
-    interface IDocument
+    public interface IDocument
     {
         /// <summary>
         /// Adds a new element into the current list of elements.
