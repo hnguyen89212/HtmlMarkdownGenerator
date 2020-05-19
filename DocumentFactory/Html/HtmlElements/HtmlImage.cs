@@ -15,7 +15,7 @@ namespace DocumentFactory.Html.HtmlElements
     {
         public HtmlImage(string props) : base(props)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

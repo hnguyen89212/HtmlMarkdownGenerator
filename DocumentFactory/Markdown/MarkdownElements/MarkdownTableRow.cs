@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.Markdown.MarkdownElements
 {
+    /// <summary>
+    /// Markdown table row.
+    /// </summary>
     public class MarkdownTableRow : TableRowTrait
     {
         public MarkdownTableRow(string props) : base(props)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

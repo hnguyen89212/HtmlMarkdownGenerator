@@ -7,10 +7,17 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.ElementTraits
 {
+    /// <summary>
+    /// Base class for table heading.
+    /// </summary>
     public class TableHeadingTrait : IElement
     {
         protected List<string> headingTexts;
 
+        /// <summary>
+        /// Constructs table heading.
+        /// </summary>
+        /// <param name="props"></param>
         public TableHeadingTrait(string props)
         {
             var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("TableHeading"));
@@ -21,6 +28,10 @@ namespace DocumentFactory.ElementTraits
             }
         }
 
+        /// <summary>
+        /// Writes table heading to file.
+        /// </summary>
+        /// <returns></returns>
         public virtual string toString()
         {
             throw new NotImplementedException();

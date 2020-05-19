@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.Html.HtmlElements
 {
+    /// <summary>
+    /// Html table object.
+    /// </summary>
     public class HtmlTable : TableTrait
     {
         public HtmlTable(string props) : base(props)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

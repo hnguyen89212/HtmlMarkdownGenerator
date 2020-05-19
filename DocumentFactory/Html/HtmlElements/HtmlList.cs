@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace DocumentFactory.Html.HtmlElements
 {
     /// <summary>
+    /// props is like
     /// Ordered;Item 1;Item 2;Item 3
     /// Unordered;Item 1;Item 2;Item 3
     /// </summary>
@@ -16,7 +17,7 @@ namespace DocumentFactory.Html.HtmlElements
     {
         public HtmlList(string props) : base(props, true)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

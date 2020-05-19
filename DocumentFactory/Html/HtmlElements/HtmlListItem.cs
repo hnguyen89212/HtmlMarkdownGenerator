@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 namespace DocumentFactory.Html.HtmlElements
 {
     /// <summary>
-    /// props is like Item 1
+    /// props is like "Item 1"
     /// </summary>
     public class HtmlListItem : ListItemTrait
     {
         public HtmlListItem(string props) : base(props)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

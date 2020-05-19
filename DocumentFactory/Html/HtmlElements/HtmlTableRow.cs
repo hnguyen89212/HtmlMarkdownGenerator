@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 namespace DocumentFactory.Html.HtmlElements
 {
     /// <summary>
+    /// Html table row.
     /// props is like
     /// Row$Some$Table$Text
     /// Row$Final$Table$Text
@@ -19,12 +20,7 @@ namespace DocumentFactory.Html.HtmlElements
 
         public HtmlTableRow(string props) : base(props)
         {
-            //var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("TableRow"));
-            //rowTexts = new List<string>();
-            //for (var i = 1; i < propsList.Length; i++)
-            //{
-            //    rowTexts.Add(propsList[i]);
-            //}
+            // Leaves empty
         }
 
         /// <summary>

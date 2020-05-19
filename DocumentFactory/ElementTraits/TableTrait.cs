@@ -11,30 +11,28 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.ElementTraits
 {
+    /// <summary>
+    /// Base class for table.
+    /// </summary>
     public class TableTrait : IElement
     {
         protected TableHeadingTrait heading;
         protected List<TableRowTrait> rows;
 
+        /// <summary>
+        /// Constructs table object.
+        /// </summary>
+        /// <param name="props"></param>
+        /// <param name="isHtml"></param>
         public TableTrait(string props, bool isHtml = true)
         {
             var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("Table"));
             rows = new List<TableRowTrait>();
-            if (isHtml)
+            IDocumentFactory documentFactory = Helper.GetDocumentFactory((isHtml) ? "Html" : "Markdown");
+            heading = (TableHeadingTrait)documentFactory.CreateElement("TableHeading", propsList[0]);
+            for (var i = 1; i < propsList.Length; i++)
             {
-                heading = (HtmlTableHeading)HtmlFactory.GetHtmlFactoryInstance().CreateElement("TableHeading", propsList[0]);
-                for (var i = 1; i < propsList.Length; i++)
-                {
-                    rows.Add((HtmlTableRow)HtmlFactory.GetHtmlFactoryInstance().CreateElement("TableRow", propsList[i]));
-                }
-            }
-            else
-            {
-                heading = (MarkdownTableHeading)MarkdownFactory.GetMarkdownFactoryInstance().CreateElement("TableHeading", propsList[0]);
-                for (var i = 1; i < propsList.Length; i++)
-                {
-                    rows.Add((MarkdownTableRow)MarkdownFactory.GetMarkdownFactoryInstance().CreateElement("TableRow", propsList[i]));
-                }
+                rows.Add((TableRowTrait)documentFactory.CreateElement("TableRow", propsList[i]));
             }
         }
 

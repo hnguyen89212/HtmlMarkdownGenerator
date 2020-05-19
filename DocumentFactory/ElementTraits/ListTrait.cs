@@ -11,37 +11,36 @@ using System.Threading.Tasks;
 namespace DocumentFactory.ElementTraits
 {
     /// <summary>
-    /// Ordered;Item 1;Item 2;Item 3
-    /// Unordered;Item 1;Item 2;Item 3
+    /// Base class for list.
     /// </summary>
     public class ListTrait : IElement
     {
         protected string type;
         protected List<ListItemTrait> list;
 
+        /// <summary>
+        /// Constructs the list.
+        /// </summary>
+        /// <param name="props"></param>
+        /// <param name="isHtml"></param>
         public ListTrait(string props, bool isHtml = true)
         {
             var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("List"));
             type = propsList[0];
             list = new List<ListItemTrait>();
+            IDocumentFactory documentFactory = (isHtml) ? Helper.GetDocumentFactory("Html") : Helper.GetDocumentFactory("Markdown");
             for (var i = 1; i < propsList.Length; i++)
             {
                 ListItemTrait item = null;
-                if (isHtml)
-                {
-                    item = (ListItemTrait)HtmlFactory.GetHtmlFactoryInstance().CreateElement("ListItem", propsList[i]);
-                }
-                else
-                {
-                    // We need to pass down the ordered/unordered information to Markdown list item.
-                    //var localProps = type + " " + propsList[i];
-                    var localProps = propsList[i];
-                    item = (ListItemTrait)MarkdownFactory.GetMarkdownFactoryInstance().CreateElement("ListItem", localProps);
-                }
+                item = (ListItemTrait)documentFactory.CreateElement("ListItem", propsList[i]);
                 list.Add(item);
             }
         }
 
+        /// <summary>
+        /// Writes the list to file.
+        /// </summary>
+        /// <returns></returns>
         public virtual string toString()
         {
             throw new NotImplementedException();

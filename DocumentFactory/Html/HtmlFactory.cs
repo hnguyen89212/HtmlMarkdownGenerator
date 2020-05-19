@@ -1,24 +1,29 @@
 ﻿using DocumentFactory.Html.HtmlElements;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DocumentFactory.Html
 {
     /// <summary>
-    /// 
+    /// A singleton factory to create Html documents and elements.
     /// </summary>
     public class HtmlFactory : IDocumentFactory
     {
+        /// <summary>
+        /// The sole instance of HtmlFactory throughout the application.
+        /// </summary>
         private static HtmlFactory _instance;
 
+        /// <summary>
+        /// Makes it private to hide the constructor from outer access.
+        /// </summary>
         private HtmlFactory()
         {
-
+            // Leaves empty
         }
 
+        /// <summary>
+        /// The only gateway to access HtmlFactory.
+        /// </summary>
+        /// <returns></returns>
         public static HtmlFactory GetHtmlFactoryInstance()
         {
             if (_instance == null)
@@ -39,7 +44,7 @@ namespace DocumentFactory.Html
         }
 
         /// <summary>
-        /// 
+        /// Factory method to create various elements given the appropriate properties.
         /// </summary>
         /// <param name="elementType"></param>
         /// <param name="props"></param>

@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.Markdown.MarkdownElements
 {
+    /// <summary>
+    /// Markdown list object.
+    /// </summary>
     public class MarkdownList : ListTrait
     {
         public MarkdownList(string props) : base(props, false)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

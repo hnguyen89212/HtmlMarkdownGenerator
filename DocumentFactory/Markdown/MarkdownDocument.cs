@@ -1,29 +1,24 @@
-﻿using System.Collections.Generic;
+﻿using DocumentFactory.DocumentTraits;
+using System.Collections.Generic;
 using System.IO;
 
 namespace DocumentFactory.Markdown
 {
     /// <summary>
-    /// 
+    /// A concrete IDocument implementation to handle Markdown.
     /// </summary>
-    public class MarkdownDocument : IDocument
+    public class MarkdownDocument : DocumentTrait
     {
-        private string fileName;
-        private List<IElement> elementsList;
-
-        public MarkdownDocument(string fileName)
+        /// <summary>
+        /// Creates Markdown file object.
+        /// </summary>
+        /// <param name="fileName"></param>
+        public MarkdownDocument(string fileName) : base(fileName)
         {
-            this.fileName = fileName;
-            using (File.Create(this.fileName)) { }
-            this.elementsList = new List<IElement>();
+            // Leaves empty.
         }
 
-        public void AddElement(IElement element)
-        {
-            this.elementsList.Add(element);
-        }
-
-        public void RunDocument()
+        public override void RunDocument()
         {
             using (var writer = new StreamWriter(this.fileName, true))
             {

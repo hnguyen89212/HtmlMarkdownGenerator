@@ -7,11 +7,14 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.Markdown.MarkdownElements
 {
+    /// <summary>
+    /// Markdown header
+    /// </summary>
     class MarkdownHeader : HeaderTrait
     {
         public MarkdownHeader(string props) : base(props)
         {
-
+            // Leaves empty
         }
 
         public override string toString()

@@ -7,15 +7,25 @@ using System.Threading.Tasks;
 
 namespace DocumentFactory.Markdown
 {
+    /// <summary>
+    /// A singleton factory to create Markdown documents and elements.
+    /// </summary>
     public class MarkdownFactory : IDocumentFactory
     {
+        /// <summary>
+        /// The sole instance of MarkdownFactory throughout the application.
+        /// </summary>
         private static MarkdownFactory _instance;
 
         private MarkdownFactory()
         {
-
+            // Leaves empty.
         }
 
+        /// <summary>
+        /// The only gateway to access MarkdownFactory.
+        /// </summary>
+        /// <returns></returns>
         public static MarkdownFactory GetMarkdownFactoryInstance()
         {
             if (_instance == null)
@@ -26,7 +36,7 @@ namespace DocumentFactory.Markdown
         }
 
         /// <summary>
-        /// 
+        /// Creates a new Markdown document object with the given name.
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
@@ -36,7 +46,7 @@ namespace DocumentFactory.Markdown
         }
 
         /// <summary>
-        /// 
+        /// Factory method to create various elements given the appropriate properties.
         /// </summary>
         /// <param name="elementType"></param>
         /// <param name="props"></param>

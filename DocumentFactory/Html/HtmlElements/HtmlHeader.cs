@@ -16,7 +16,7 @@ namespace DocumentFactory.Html.HtmlElements
 
         public HtmlHeader(string props) : base(props)
         {
-
+            // Leaves empty.
         }
 
         public override string toString()

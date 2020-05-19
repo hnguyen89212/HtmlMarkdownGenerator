@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using DocumentFactory.DocumentTraits;
+using System.Collections.Generic;
 using System.IO;
 
 namespace DocumentFactory.Html
@@ -6,24 +7,18 @@ namespace DocumentFactory.Html
     /// <summary>
     /// A concrete IDocument implementation to handle Html.
     /// </summary>
-    public class HtmlDocument : IDocument
+    public class HtmlDocument : DocumentTrait
     {
-        private string fileName;
-        private List<IElement> elementsList;
-
-        public HtmlDocument(string fileName)
+        /// <summary>
+        /// Creates Html file object.
+        /// </summary>
+        /// <param name="fileName"></param>
+        public HtmlDocument(string fileName) : base(fileName)
         {
-            this.fileName = fileName;
-            using (File.Create(this.fileName)) { }
-            this.elementsList = new List<IElement>();
+            // Leaves empty.
         }
 
-        public void AddElement(IElement element)
-        {
-            this.elementsList.Add(element);
-        }
-
-        public void RunDocument()
+        public override void RunDocument()
         {
             using (var writer = new StreamWriter(this.fileName, true))
             {

@@ -9,13 +9,14 @@ using System.Threading.Tasks;
 namespace DocumentFactory.Html.HtmlElements
 {
     /// <summary>
+    /// Html table heading.
     /// props is like Head$Table Heading 1$Table Heading 2$Table Heading 3
     /// </summary>
     public class HtmlTableHeading : TableHeadingTrait
     {
         public HtmlTableHeading(string props) : base(props)
         {
-
+            // Leaves empty
         }
 
         /// <summary>
