@@ -41,8 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Html\HtmlDocument.cs" />
+    <Compile Include="Html\HtmlElements\HtmlHeader.cs" />
+    <Compile Include="Html\HtmlElements\HtmlImage.cs" />
+    <Compile Include="Html\HtmlElements\HtmlList.cs" />
+    <Compile Include="Html\HtmlElements\HtmlListItem.cs" />
+    <Compile Include="Html\HtmlElements\HtmlTable.cs" />
+    <Compile Include="Html\HtmlElements\HtmlTableHeading.cs" />
+    <Compile Include="Html\HtmlElements\HtmlTableRow.cs" />
+    <Compile Include="Html\HtmlFactory.cs" />
+    <Compile Include="IDocument.cs" />
     <Compile Include="IDocumentFactory.cs" />
+    <Compile Include="IElement.cs" />
+    <Compile Include="Markdown\MarkdownDocument.cs" />
+    <Compile Include="Markdown\MarkdownFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\Helper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Markdown\MarkdownElements\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
