@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElementTraits\HeaderTrait.cs" />
+    <Compile Include="ElementTraits\ListItemTrait.cs" />
+    <Compile Include="ElementTraits\ListTrait.cs" />
+    <Compile Include="ElementTraits\TableHeadingTrait.cs" />
+    <Compile Include="ElementTraits\TableRowTrait.cs" />
+    <Compile Include="ElementTraits\TableTrait.cs" />
     <Compile Include="Html\HtmlDocument.cs" />
     <Compile Include="Html\HtmlElements\HtmlHeader.cs" />
     <Compile Include="Html\HtmlElements\HtmlImage.cs" />
@@ -54,12 +60,18 @@
     <Compile Include="IDocumentFactory.cs" />
     <Compile Include="IElement.cs" />
     <Compile Include="Markdown\MarkdownDocument.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownHeader.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownImage.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownList.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownListItem.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownTable.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownTableHeading.cs" />
+    <Compile Include="Markdown\MarkdownElements\MarkdownTableRow.cs" />
     <Compile Include="Markdown\MarkdownFactory.cs" />
+    <Compile Include="ElementTraits\ImageTrait.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\Helper.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Markdown\MarkdownElements\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

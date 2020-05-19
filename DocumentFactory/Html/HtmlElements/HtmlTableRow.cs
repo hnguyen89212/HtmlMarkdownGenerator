@@ -1,4 +1,5 @@
-﻿using DocumentFactory.Utilities;
+﻿using DocumentFactory.ElementTraits;
+using DocumentFactory.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,25 +13,25 @@ namespace DocumentFactory.Html.HtmlElements
     /// Row$Some$Table$Text
     /// Row$Final$Table$Text
     /// </summary>
-    public class HtmlTableRow : IElement
+    public class HtmlTableRow : TableRowTrait
     {
-        private List<string> rowTexts;
+        //private List<string> rowTexts;
 
-        public HtmlTableRow(string props)
+        public HtmlTableRow(string props) : base(props)
         {
-            var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("TableRow"));
-            rowTexts = new List<string>();
-            for (var i = 1; i < propsList.Length; i++)
-            {
-                rowTexts.Add(propsList[i]);
-            }
+            //var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("TableRow"));
+            //rowTexts = new List<string>();
+            //for (var i = 1; i < propsList.Length; i++)
+            //{
+            //    rowTexts.Add(propsList[i]);
+            //}
         }
 
         /// <summary>
         /// <tr><td>Some</td><td>Table</td><td>Text</td></tr>
         /// </summary>
         /// <returns></returns>
-        public string toString()
+        public override string toString()
         {
             string ret = "<tr>";
             foreach (string text in rowTexts)

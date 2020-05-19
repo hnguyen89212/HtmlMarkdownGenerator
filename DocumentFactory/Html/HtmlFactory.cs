@@ -56,6 +56,8 @@ namespace DocumentFactory.Html
                     return new HtmlHeader(props);
                 case "List":
                     return new HtmlList(props);
+                case "ListItem":
+                    return new HtmlListItem(props);
                 case "Table":
                     return new HtmlTable(props);
                 case "TableHeading":

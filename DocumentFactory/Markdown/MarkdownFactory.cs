@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DocumentFactory.Markdown.MarkdownElements;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,7 +43,25 @@ namespace DocumentFactory.Markdown
         /// <returns></returns>
         public IElement CreateElement(string elementType, string props)
         {
-            throw new NotImplementedException();
+            switch (elementType)
+            {
+                default:
+                    return null;
+                case "Image":
+                    return new MarkdownImage(props);
+                case "Header":
+                    return new MarkdownHeader(props);
+                case "List":
+                    return new MarkdownList(props);
+                case "ListItem":
+                    return new MarkdownListItem(props);
+                case "Table":
+                    return new MarkdownTable(props);
+                case "TableHeading":
+                    return new MarkdownTableHeading(props);
+                case "TableRow":
+                    return new MarkdownTableRow(props);
+            }
         }
     }
 }

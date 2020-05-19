@@ -1,4 +1,5 @@
-﻿using DocumentFactory.Utilities;
+﻿using DocumentFactory.ElementTraits;
+using DocumentFactory.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,15 @@ namespace DocumentFactory.Html.HtmlElements
     /// <summary>
     /// props is like 1;The Header#
     /// </summary>
-    public class HtmlHeader : IElement
+    public class HtmlHeader : HeaderTrait
     {
-        private string level;
-        private string headerText;
 
-        public HtmlHeader(string props)
+        public HtmlHeader(string props) : base(props)
         {
-            var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("Header"));
-            level = propsList[0];
-            headerText = propsList[1];
+
         }
 
-        public string toString()
+        public override string toString()
         {
             return $"<h{level}>{headerText}</h{level}>";
         }

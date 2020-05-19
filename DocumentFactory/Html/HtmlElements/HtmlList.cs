@@ -1,4 +1,5 @@
-﻿using DocumentFactory.Utilities;
+﻿using DocumentFactory.ElementTraits;
+using DocumentFactory.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,24 +12,14 @@ namespace DocumentFactory.Html.HtmlElements
     /// Ordered;Item 1;Item 2;Item 3
     /// Unordered;Item 1;Item 2;Item 3
     /// </summary>
-    class HtmlList : IElement
+    class HtmlList : ListTrait
     {
-        private string type;
-        private List<HtmlListItem> list;
-
-        public HtmlList(string props)
+        public HtmlList(string props) : base(props, true)
         {
-            var propsList = props.Split(Helper.GetDelimeterOfPropsOfElement("List"));
-            type = propsList[0];
-            list = new List<HtmlListItem>();
-            for (var i = 1; i < propsList.Length; i++)
-            {
-                HtmlListItem item = new HtmlListItem(propsList[i]);
-                list.Add(item);
-            }
+
         }
 
-        public string toString()
+        public override string toString()
         {
             string ret = "";
             string prefix = (type == "Ordered") ? "<ol>" : "<ul>";

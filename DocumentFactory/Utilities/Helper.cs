@@ -8,6 +8,12 @@ namespace DocumentFactory.Utilities
 {
     public class Helper
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="elementType"></param>
+        /// <param name="isMarkdown"></param>
+        /// <returns></returns>
         public static char GetDelimeterOfPropsOfElement(string elementType)
         {
             switch(elementType)

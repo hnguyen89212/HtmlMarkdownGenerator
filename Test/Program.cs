@@ -13,7 +13,9 @@ namespace Test
         static void Main(string[] args)
         {
             string[] commands;
-            var list = File.ReadAllText("CreateDocumentScript.txt");
+            //var list = File.ReadAllText("CreateDocumentScript.txt // html
+            //var list = File.ReadAllText("CreateDocumentScriptMd.txt"); // markdown
+            var list = File.ReadAllText("CreateDocumentScriptFinal.txt");
             commands = list.Split('#'); // or perhaps lines
 
             bool isHtml = false;
@@ -59,7 +61,6 @@ namespace Test
                         document.RunDocument();
                         string currentDirectory = Directory.GetCurrentDirectory();
                         string absolutePathToDocument = $"--homepage file:///{currentDirectory}/{documentName}";
-                        //System.Diagnostics.Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", "--homepage file:///C:/index.html");
                         System.Diagnostics.Process.Start("C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", absolutePathToDocument);
                         break;
                     default:
